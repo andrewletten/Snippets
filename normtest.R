@@ -1,4 +1,5 @@
-# Graphical representation of argument by 'Grace et al. (2012) Science 355' that a random bivariate sample from a log-normal dist will appear hump-shaped in linear space
+# Graphical representation of argument by 'Grace et al. (2012) Science 355' that a random bivariate sample 
+# from a log-normal dist will appear hump-shaped in linear space
 
 library(quantreg)
 
