@@ -26,5 +26,4 @@ I1 = order(normtest$chum)
 lines(normtest$chum[I1], modtest$fit[I1], lty = 1)
 lines(normtest$chum[I1], modtestrq$fit[I1], lty = 2)
 
-summary(modtest)
 

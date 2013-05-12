@@ -1,6 +1,6 @@
 library(shiny)
 
-# Define UI for 'Humps'
+# Define UI for 'Pseudo-Humps'
 shinyUI(pageWithSidebar(
   
   # Application title
@@ -27,8 +27,10 @@ shinyUI(pageWithSidebar(
     
     ),
   
- 
   mainPanel(
-    plotOutput("distPlot")
+    tabsetPanel(
+      tabPanel("Plot", plotOutput("lnormBivar")), 
+      tabPanel("Summary", verbatimTextOutput("caption")) 
     )
+  )
 ))
