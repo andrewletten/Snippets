@@ -13,11 +13,11 @@ shinyServer(function(input, output) {
     plot(datasetInput()[,1]~datasetInput()[,2], xlim = c(0,200), ylim = c(0,200))
     modtest = lm(datasetInput()[,1] ~ poly(datasetInput()[,2], 2))
     I1 = order(datasetInput()[,2])
-    lines(datasetInput()[,2][I1], modtest$fit[I1], lty = 1)
+    lines(datasetInput()[,2][I1], modtest$fit[I1], lty = 1, col = 'red')
          
     #quantile regression (95th percentile)
     modtestrq = rq(datasetInput()[,1] ~ poly(datasetInput()[,2], 2), tau = 0.95)
-    lines(datasetInput()[,2][I1], modtestrq$fit[I1], lty = 2)   
+    lines(datasetInput()[,2][I1], modtestrq$fit[I1], lty = 2, col = 'blue')   
   })
   
   output$caption <- renderPrint({
@@ -25,6 +25,10 @@ shinyServer(function(input, output) {
     summary(modtest)
   })  
 })
+
+
+
+
 
 # # Define server logic required to plot various variables against mpg
 # shinyServer(function(input, output) {
