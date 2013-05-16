@@ -10,14 +10,15 @@ shinyServer(function(input, output) {
   output$lnormBivar <- renderPlot({
     
     # generate an rnorm distribution and plot it
-    plot(datasetInput()[,1]~datasetInput()[,2], xlim = c(0,200), ylim = c(0,200))
+    plot(datasetInput()[,1]~datasetInput()[,2], xlim = c(0,200), ylim = c(0,200), xlab = "rlnorm1", ylab = "rlnorm2")
     modtest = lm(datasetInput()[,1] ~ poly(datasetInput()[,2], 2))
     I1 = order(datasetInput()[,2])
     lines(datasetInput()[,2][I1], modtest$fit[I1], lty = 1, col = 'red')
          
     #quantile regression (95th percentile)
     modtestrq = rq(datasetInput()[,1] ~ poly(datasetInput()[,2], 2), tau = 0.95)
-    lines(datasetInput()[,2][I1], modtestrq$fit[I1], lty = 2, col = 'blue')   
+    lines(datasetInput()[,2][I1], modtestrq$fit[I1], lty = 2, col = 'blue') 
+    legend("topright", c("mean", "95th quantile"), lty = c(1,2), col = c("red","blue"), bty = "n")
   })
   
   output$caption <- renderPrint({
