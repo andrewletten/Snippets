@@ -1,4 +1,5 @@
 library(shiny)
+library(quantreg)
 
 # Define UI for 'Pseudo-Humps'
 shinyUI(pageWithSidebar(
@@ -29,7 +30,7 @@ shinyUI(pageWithSidebar(
   
   mainPanel(
     helpText("Pseudo-Humps is an interactive visualization of the hump-shaped appearance of a 
-             bivariate regression of two random lognormal distributions in linear space (inspired by",  
+             bivariate plot of two random lognormal distributions in linear space (inspired by",  
              a(href="http://www.sciencemag.org/content/335/6075/1441.3.full.html", target="_blank", 
              "Grace et al. (2012)"),"Response to Comments on 'Productivity Is a Poor Predictor of Plant 
              Species Richness'. Science, 335 (6075),  p1441. See the Info tab for more...um...info. Put together by", 
@@ -49,7 +50,7 @@ shinyUI(pageWithSidebar(
                                 HTML("<br><br>"),
                                 "Because this issue was pointed out in a response (Grace et al. 2012) to a 
                                 commentary (Fridely et al. 2012) on a paper on the productivity-richness relationship 
-                                (Adler et al. 2011)...and I was curious...and Shiny is fun. Code available as a gist.",
+                                (Adler et al. 2011)...and I was curious...and Shiny is fun. Code available as a GitHub", a(href="https://gist.github.com/enterthesloth/5597245", target="_blank", "gist."),
                                 HTML("<br><br>"),
                                 "Refs",
                                 HTML("<br><br>"),

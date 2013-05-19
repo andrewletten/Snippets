@@ -2,7 +2,7 @@ library(shiny)
 
 shinyServer(function(input, output) {
   
-  datasetInput <- reactive({
+  datasetInput = reactive({
     data.frame(rlnorm(input$obs, meanlog = log(input$meanie), sdlog = log(input$seedy)), 
                rlnorm(input$obs, meanlog = log(input$meanie), sdlog = log(input$seedy)))
   })
